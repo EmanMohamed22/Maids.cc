@@ -1,0 +1,83 @@
+#home{
+    background-color: var(--background);
+    
+}
+.header{
+    padding: 20px;
+    overflow: hidden;
+}
+.header-image{
+    border: 1px solid var(--font-color);
+  width: 75%;
+    overflow: hidden;
+ border-radius: var( --border-radius);
+ position: relative;
+}
+.form-control{
+    border: var(--font-color) 2px solid;
+    padding: 8px;
+}
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+h1{
+    font-size: 55px;
+    margin-bottom: 20px;
+    color: var(--font-color);
+}
+/* users  */
+.users{
+margin-top: 10px;
+height: 100%;
+}
+.user-card{
+    border-radius: var( --border-radius);
+    overflow: hidden;
+    background-color: white;
+    cursor: pointer;
+    transition: all .5s;
+}
+h3{
+    color: var(--font-color);
+}
+.user-card:hover{
+   transform: scale(1.05);
+}
+.user-card:hover img{
+   transform: scale(1.05);
+}
+.user-card-image{
+   height: 155px; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ 
+}
+.user-card-image img{
+    height: 130px;
+    width: 130px;
+border-radius: 50%;
+border: 2px solid white ;
+padding: 5px;
+transition: all .5s;
+}
+.user-card-text{
+    padding: 5px 0;
+    text-align: center;
+
+}
+p{
+    font-size: 30px;
+    color: red;
+    padding: 25px 0;
+}
+.col-md-12 div{
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 20px;
+}

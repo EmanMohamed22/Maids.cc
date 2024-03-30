@@ -1,0 +1,89 @@
+<section id="home">
+    <div class="header">
+        <div class="container">
+           
+            <div class="row ">
+                <div class="col-md-6 d-flex align-items-center">
+                  <div>
+                    <h1>Maid.cc Users</h1>
+                  
+                    <div>
+                       <input type="number" class="form-control"[(ngModel)]="searchValue" (keyup)="searchFn()" placeholder="Search by User Id">
+                    </div>
+                 
+                  </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <div class="header-image">
+                        <img src="./assets/maid1.jpg" alt="">
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+       
+    </div>
+    <!-- users cards-->
+    <div class="users ">
+        <div class="container h-100 pb-5">
+           
+            <div class="row g-5">
+              <ng-container *ngIf="!searchValue">
+                <div class="col-md-4" *ngFor="let user of users">
+                    <div class="user-card shadow-sm m-3" [routerLink]="'/user-details/'+user.id">
+                        
+                        <div class="user-card-image">
+                            <div class="overflow-hidden text-center">
+                                <img [src]="user.avatar" alt="">
+                            </div>
+                        </div>
+                        <div class="user-card-text">
+                            <h3><span>ID: </span>{{user.id}} </h3>
+                            <h3>{{user.first_name}} {{user.last_name}}</h3>
+                        </div>
+                    </div>
+                </div>
+              </ng-container>
+              <ng-container *ngIf="searchValue">
+                <div class="col-md-4" *ngFor="let user of searchArr">
+                    <div class="user-card shadow-sm m-3" [routerLink]="'/user-details/'+user.id">
+                        
+                        <div class="user-card-image">
+                            <div class="overflow-hidden text-center">
+                                <img [src]="user.avatar" alt="">
+                            </div>
+                        </div>
+                        <div class="user-card-text">
+                            <h3><span>ID: </span>{{user.id}} </h3>
+                            <h3>{{user.first_name}} {{user.last_name}}</h3>
+                        </div>
+                    </div>
+                </div>
+               <div *ngIf="searchArr.length==0" class="text-center py-5">
+                <p >User does not exist</p>
+               </div>
+                
+              </ng-container>
+              
+                
+                
+            </div>
+            <div class="row"*ngIf="!searchValue" >
+                <div class="col-md-12 ">
+                    <div class="">
+                        <mat-paginator
+                   
+                    [length]="usersData.length"
+                    [pageSize]="6"
+                     [pageSizeOptions]="[6]"
+                    (page)="handlePageEvent($event)"
+                    aria-label="Select page">
+      </mat-paginator>
+      
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

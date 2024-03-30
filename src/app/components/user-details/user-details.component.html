@@ -1,0 +1,27 @@
+<section >
+    <div class="container">
+        <div class="detail-card shadow-lg">
+            <div class="row align-items-center h-100">
+           
+                <div class="col-md-3 mx-auto">
+                    <div class="details-avatar">
+                        <img [src]="userDetails.avatar" alt="">
+                    </div>
+                </div>
+                <div class="col-md-9 ">
+                    <div class="ms-3">
+                        <h3><span>ID: </span>{{userDetails.id}}</h3>
+                    <h3><span>Full Name: </span>{{userDetails.first_name}} {{userDetails.last_name}}</h3>
+                    <h3><span>Email: </span>{{userDetails.email}}</h3>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class=" text-end">
+                <button class="back-btn" routerLink="/home">Back</button>
+            </div>  
+        </div>
+       
+           
+    </div>
+</section>
